@@ -6,5 +6,5 @@ test("should validate App the componnent", async () => {
   expect(App).toBeTruthy();
 
   const wrapper = mount(App, {});
-  expect(wrapper.text()).toContain("Vite + Vue <3");
+  expect(wrapper.text()).toContain("count is 0");
 });
