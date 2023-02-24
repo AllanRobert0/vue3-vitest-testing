@@ -16,7 +16,7 @@ const count = ref(0)
     <div class="card">
     <button type="button" @click="count++">count is {{ count }}</button>
     <button ref="switchTextButton" type="button" @click="msg = 'Text Switched Successfully!!'">Alterar texto</button>
-    <button ref="showImage" type="button" @click="background = true">Mostrar Imagem</button>
+    <button ref="showImage" type="button" @click="background = !background">Mostrar Imagem</button>
     
    
     <p>
