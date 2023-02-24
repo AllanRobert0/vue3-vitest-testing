@@ -1,21 +1,29 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-
 defineProps<{ msg: string }>()
-
+const background = ref(false)
 const count = ref(0)
 </script>
 
 <template>
+ 
   <h1>{{ msg }}</h1>
-
-  <div class="card">
+     
+  <p v-if="background">
+    <img src="src/assets/vuelogo.png" class="lado1">
+  </p>
+  
+    <div class="card">
     <button type="button" @click="count++">count is {{ count }}</button>
     <button ref="switchTextButton" type="button" @click="msg = 'Text Switched Successfully!!'">Alterar texto</button>
+    <button ref="showImage" type="button" @click="background = true">Mostrar Imagem</button>
+    
+   
     <p>
       Edit
       <code>components/HelloWorld.vue</code> to test HMR
     </p>
+
   </div>
 
   <p>

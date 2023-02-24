@@ -54,12 +54,14 @@ test("should overwrite the text on page", async () => {
       msg: "Welcome to the Test",
     },
   });
-  
+
   const buttonWrapper = wrapper.find({ ref: "switchTextButton" });
   await buttonWrapper.trigger("click");
 
   expect(wrapper.text()).toContain("Text Switched Successfully!!");
 });
+
+// Ao clicar no botão, deve aparecer uma imagem
 
 test("should show an image on page", async () => {
   expect(HelloWord).toBeTruthy();
@@ -69,13 +71,13 @@ test("should show an image on page", async () => {
       msg: "Welcome to the Test",
     },
   });
-  
-  const imgBeforeClick = wrapper.findAll('.lado1');
+
+  const imgBeforeClick = wrapper.findAll(".lado1");
   expect(imgBeforeClick.length).toBe(0);
 
   const buttonWrapper = wrapper.find({ ref: "showImage" });
   await buttonWrapper.trigger("click");
 
-  const imgAfterClick = wrapper.findAll('.lado1');
+  const imgAfterClick = wrapper.findAll(".lado1");
   expect(imgAfterClick.length).toBe(1);
 });
